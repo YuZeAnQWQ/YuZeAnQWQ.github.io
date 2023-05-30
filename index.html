@@ -1,9 +1,96 @@
-<p>ETO根据地————统帅：黄鸡贼</p>
+<!DOCTYPE html>
+<meta charset="utf-8">
+<head>
+  <title> 主页 - YuZeAn 的小站 </title>
+  <link rel="stylesheet" href="https://YuZeAnQWQ.github.io/css/style.css">
+  <style>
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #333;
+    }
 
-<p>召唤宁吴俊&王熙言</p>
+    li {
+        float: left;
+    }
 
-<p>打开 laoi-offical.github.io</p>
+    li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
 
-<p>赵**生物竞赛金牌</p>
-
-<p>updata:目前核心网站正处于测试阶段，不予开放，如果想正式使用请在10.1日后打开 www.yellowteam.com.cn </p>
+    li a:hover {
+        background-color: #111;
+    }
+    .footer {
+        padding: 20px;
+        text-align: center;
+        background: #ddd;
+        margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <ul>
+      <li><a class="active" href="/">主页</a></li>
+      <li><a href="/blog">博客</a></li>
+      <li><a class="active" href="/chat">公聊</a></li>
+      <li><a class="active" href="/study">学习</a></li>
+      <li><a class="active" href="/about">关于</a></li>
+  </ul>
+<div class="t-footer" style="font-size: 13.5px;"><span id="timeDate">加载天数...</span><span id="times">加载时分秒...</span>
+<script>
+    var now = new Date();
+    function createtime() {
+        var grt= new Date("01/22/2023 00:00:00");
+        now.setTime(now.getTime()+250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} 
+        minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+        if(now<grt){
+            days = ( grt-now ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+            hours = ( grt-now ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+            if(String(hnum).length ==1 ){hnum = "0" + hnum;}
+            minutes = (grt - now ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+            mnum = Math.floor(minutes);
+             if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+            seconds = (grt - now ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+            if(seconds==60){
+                seconds=0;
+                minutes++;
+                mnum = Math.floor(minutes);
+            }
+            snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+            document.getElementById("timeDate").innerHTML = "距春节还剩"+dnum+" 天 ";
+            document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+        }else{
+            if(seconds==60){
+                seconds=0;
+                minutes++;
+                mnum = Math.floor(minutes);
+            }
+            snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+            document.getElementById("timeDate").innerHTML = "距春节已经过去了"+dnum+" 天 ";
+            document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+        }
+    }
+setInterval("createtime()",250);
+</script>
+  </div>
+  <p style="color:#aaa;">计时器原作者为<a href="https://www.luogu.com.cn/user/857975" style="color:#888;">Gtryobe</a>，由HelloOSMe从<a href="http://rubisco0326.wikidot.com/whatiwanttosay" style="color:#888;">Rubbbisco的互联网驿站</a>修改，源码现来源于<a href="https://helloos.wikidot.com/tech:timetag" style="color:#888;">HelloOSMe's Personal Computer</a>,遵循<a href="https://creativecommons.org/licenses/by-sa/3.0/" style="color:#888;">CC-BY-SA-3.0</a>协议。</p>
+  <p>建设房子中......</p>
+  <div class="footer">
+     <p>Copyright(c) 2022-2023 YuZeAn保留所有权利</p>
+  </div>
+</body>
+</html>
+<!--GitHub tell me it has some problem-->
